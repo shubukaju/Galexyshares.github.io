@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <style>
+         table {
+         border-collapse: collapse;
+         border: 2px black solid;
+         font: 12px sans-serif;
+         }
+         td {
+         border: 1px black solid;
+         padding: 5px;
+         }
+      </style>
+   </head>
+   <body>
+      <div id='container'></div>
+      <script type="text/javascript"charset="utf-8">
+                var data = 'heading1,heading2,heading3,heading4,heading5\nvalue1_1,value2_1,value3_1,value4_1,value5_1\nvalue1_2,value2_2,value3_2,value4_2,value5_2';
+         var lines = data.split("\n"),
+         output = [],
+         i;
+         for (i = 0; i < lines.length; i++)
+         output.push("<tr><td>"
+         + lines[i].slice(0,-1).split(",").join("</td><td>")
+         + "</td></tr>");
+         output = "<table>" + output.join("") + "</table>";
+         var div = document.getElementById('container');
+         
+         div.innerHTML = output;
+
+</script>
+
+
+   </body>
+</html>
+
+
+
+
+
+<!-- 
+
+
+
+
+
+
+
+
+<html>
+<head><title>Reading values into a table</title></head>
+<body>
+
+<table datasrc='#data'>
+  
+  <thead>
+     <tr><th>Number</th><th>English</th><th>French</th><th>German</th></tr>
+  </thead>
+
+  <tbody> <tr>
+     <td><span datafld='number'> </span></td>
+     <td><span datafld='english'></span></td>
+     <td><span datafld='french'> </span></td>
+     <td><span datafld='german'> </span></td>
+  </tbody>
+
+</table>
+
+
+<object ID=data classid="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83">
+  <param nAme="DataURL" value="data.csv">
+  <param nAme="UseHeader" value="true">
+</object>
+
+</body>
+</html> -->
